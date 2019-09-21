@@ -26,11 +26,11 @@ class LoadingScreen extends Component {
           if (reponse.status == 200) {
             this.props.navigation.navigate('HomeScreen');
           } else {
-            this.props.navigation.navigate('LoginScreen');
+            this.props.navigation.navigate('HomeScreen');
           }
         })
         .catch(() => {
-          this.props.navigation.navigate('LoginScreen');
+          this.props.navigation.navigate('HomeScreen');
         });
     });
   };
