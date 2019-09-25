@@ -10,7 +10,7 @@ class CategoryButton extends Component {
     state = {};
     render(){
         return (
-            <TouchableOpacity style={styles.buttonContainer} {...this.props}>
+            <TouchableOpacity onPress={this.props.handleOnPress} style={styles.buttonContainer} {...this.props}>
                 <Emoji name={this.props.emojiName} style={{fontSize: 22}} />
                 <Text style={styles.buttonText}>{this.props.text}</Text>
             </TouchableOpacity>

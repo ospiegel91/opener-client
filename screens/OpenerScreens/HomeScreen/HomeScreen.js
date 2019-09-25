@@ -1,12 +1,16 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, AsyncStorage} from 'react-native';
 import CategoryButton from '../Components/CategoryButton/CategoryButton';
+import Shuffler from '../Components/Shuffler/Shuffler';
 import Header from '../Components/Header/Header';
 import axios from 'axios';
 
 class HomeScreen extends Component {
   state = {
       isLoggedIn: false,
+      category: 'random',
+      shufflerDisplay: false,
+      deck: [{"content": "mock"}],
   }
   componentDidMount() {
     this.checkIfLoggedIn();
@@ -45,6 +49,35 @@ class HomeScreen extends Component {
     });
   };
 
+  handleCategoryButtonPress = (cat) => {
+    axios
+        .get('http://127.0.0.1:3000/opener/retrieve-by-cat?category='+cat)
+        .then(response => {
+          if (response.status == 200) {
+            this.setState(() => {
+                return {
+                    deck: response.data,
+                    category: cat,
+                    shufflerDisplay: true,
+                };
+              });
+          } else {
+            alert(response.status);
+          }
+        })
+        .catch(err => {
+          alert(err)
+        });
+  }
+
+  handleExitButtonPress = () => {
+    this.setState(() => {
+      return {
+        shufflerDisplay: false,
+      };
+    });
+  }
+
   handleLeftHeaderIcon = () => {
     if (this.state.isLoggedIn){
       return alert('already logged in - should direct to log out')
@@ -57,14 +90,24 @@ class HomeScreen extends Component {
   }
 
   render() {
+    let screenDisplay = (this.state.shufflerDisplay == true) ? 'none' : 'flex'
+    // let screenDisplay = 'flex';
+    // if(this.state.shufflerDisplay == true){
+    //   screenDisplay = 'none'
+    // }else{
+    //   screenDisplay = 'flex'
+    // }
     return (
       <View style={styles.container}>
         <Header loggedIn={this.state.isLoggedIn} handleRightIcon={this.handleRightHeaderIcon} handleLeftIcon={this.handleLeftHeaderIcon} topRightButton="edit"/>
-        <Text style={styles.text}>Select category:</Text>
-        <View style={styles.categoriesContainer}>
-          <CategoryButton text="Random" emojiName="question"></CategoryButton>
-          <CategoryButton text="Yoga Girls" emojiName="woman_in_lotus_position"></CategoryButton>
+        <View style={{display: screenDisplay}}>
+          <Text style={styles.text}>Select category:</Text>
+          <View style={styles.categoriesContainer}>
+            <CategoryButton handleOnPress={this.handleCategoryButtonPress.bind(this, 'random')} text="Random" emojiName="question"></CategoryButton>
+            <CategoryButton handleOnPress={this.handleCategoryButtonPress.bind(this, 'yoga')} text="Yoga" emojiName="woman_in_lotus_position"></CategoryButton>
+          </View>
         </View>
+        <Shuffler deck={this.state.deck} handleExitPress={this.handleExitButtonPress} display={this.state.shufflerDisplay} category={this.state.category}/>
       </View>
     );
   }

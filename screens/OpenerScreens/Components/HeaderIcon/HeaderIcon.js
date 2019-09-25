@@ -8,7 +8,6 @@ const {width, height} = Dimensions.get('screen');
 class HeaderIcon extends Component {
     state = {};
     render(){
-        alert('is the icon disabled: '+this.props.disabled)
         return (
             <Icon
                 onPress={this.props.handlePress}
