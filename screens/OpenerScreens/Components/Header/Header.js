@@ -9,12 +9,13 @@ class Header extends Component {
   state = {};
 
   render() {
+    let symbolName = (this.props.loggedIn) ? 'logout' : 'login'
     return (
       <View style={styles.container}>
         <HeaderIcon 
             handlePress={this.props.handleLeftIcon}
-            name="login"
-            type='simple-line-icon'
+            name={symbolName}
+            type='antdesign'
             disabled={false}
         />
         <Text style={styles.text}>Opener</Text>

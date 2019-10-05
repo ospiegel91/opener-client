@@ -42,7 +42,9 @@ class LoginScreen extends Component {
           if (response.status == 201) {
             try {
               const token = response.headers['x-auth'];
+              const userId = response.headers['user-id'];
               if (token) {
+                AsyncStorage.setItem('user-id', userId);
                 AsyncStorage.setItem('x-auth', token)
                   .then(() => {
                     this.props.navigation.navigate('HomeScreen');

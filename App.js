@@ -12,6 +12,7 @@ import {navigatorStyle, createAppContainer, createSwitchNavigator} from 'react-n
 
 import LoadingScreen from './screens/LoadingScreen';
 import LoginScreen from './screens/AuthScreens/LoginScreen/LoginScreen';
+import LogoutScreen from './screens/AuthScreens/LogoutScreen/LogoutScreen';
 import RegisterScreen from './screens/AuthScreens/RegisterScreen/RegisterScreen';
 import HomeScreen from './screens/OpenerScreens/HomeScreen/HomeScreen';
 import CreateOpenerScreen from './screens/OpenerScreens/CreateOpenerScreen/CreateOpenerScreen';
@@ -34,6 +35,7 @@ export default class App extends React.Component {
 const AppSwitchNavigator = createSwitchNavigator({
   LoadingScreen:LoadingScreen,
   LoginScreen:LoginScreen,
+  LogoutScreen:LogoutScreen,
   RegisterScreen:RegisterScreen,
   HomeScreen:HomeScreen,
   CreateOpenerScreen:CreateOpenerScreen,
