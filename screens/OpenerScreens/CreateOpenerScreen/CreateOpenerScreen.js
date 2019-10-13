@@ -1,13 +1,6 @@
 import React, {Component} from 'react';
-import {
-  View,
-  TextInput,
-  StyleSheet,
-  Button,
-  Image,
-  Dimensions,
-} from 'react-native';
-
+import {Text, View, TextInput, StyleSheet, Dimensions} from 'react-native';
+import TextButton from '../Components/TextButton/TextButton';
 import axios from 'axios';
 
 import WideButton from '../Components/WideButton/WideButton';
@@ -70,12 +63,14 @@ class CreateOpenerScreen extends Component {
     }
   };
 
+  handleLinkToHomeScreen = () => {
+    this.props.navigation.navigate('HomeScreen');
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Image
-          style={styles.logo}
-          source={require('../../../assets/images/logo.png')}></Image>
+        <Text style={styles.logo}>yadda yadda ...</Text>
         <View style={styles.formContainer}>
           <TextInput
             autoCapitalize="none"
@@ -100,12 +95,12 @@ class CreateOpenerScreen extends Component {
           />
         </View>
         <View
-          style={{
-            alignItems: 'center',
-            height: 150,
-            justifyContent: 'space-around',
-          }}>
+          style={styles.buttonsContainer}>
           <WideButton text="Share!" onPress={this.handleSubmit} />
+          <TextButton
+            onPress={this.handleLinkToHomeScreen}
+            text="or go back home..."
+          />
         </View>
       </View>
     );
@@ -115,6 +110,11 @@ class CreateOpenerScreen extends Component {
 export default CreateOpenerScreen;
 
 const styles = StyleSheet.create({
+  buttonsContainer:{
+    alignItems: 'center',
+    height: 150,
+    justifyContent: 'space-around',
+  },
   container: {
     flex: 1,
     alignItems: 'center',
@@ -125,10 +125,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   logo: {
-    width: 100,
+    textAlign: 'center',
+    width: '100%',
     height: 100,
-    marginTop: '22%',
-    marginBottom: '8%',
+    marginTop: 70,
+    fontSize: 32,
+    marginBottom: 4,
+    fontFamily: 'Gaegu',
   },
   textInput: {
     width: 0.9 * width,
@@ -137,7 +140,8 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     paddingLeft: '3%',
     color: 'rgb(188,188,188)',
-    fontSize: 18,
+    fontSize: 22,
+    fontFamily: 'Gaegu',
   },
   contentInput: {
     width: 0.9 * width,
@@ -146,6 +150,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     paddingLeft: '3%',
     color: 'rgb(188,188,188)',
-    fontSize: 18,
+    fontSize: 22,
+    fontFamily: 'Gaegu',
   },
 });

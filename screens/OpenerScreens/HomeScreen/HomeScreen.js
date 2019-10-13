@@ -1,17 +1,19 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, AsyncStorage, Clipboard} from 'react-native';
-import CategoryButton from '../Components/CategoryButton/CategoryButton';
-import Shuffler from '../Components/Shuffler/Shuffler';
-import Header from '../Components/Header/Header';
+import {View, StyleSheet, AsyncStorage, Clipboard} from 'react-native';
 import axios from 'axios';
+
+import Header from '../Components/Header/Header';
+import GuideTextBox from './Components/GuideTextBox/GuideTextBox';
+import CategoryButton from './Components/CategoryButton/CategoryButton'
+import Shuffler from '../Components/Shuffler/Shuffler';
 
 class HomeScreen extends Component {
   state = {
     isLoggedIn: false,
     category: 'random',
     shufflerDisplay: false,
-    deck: [{content: 'mock'}],
-    activeCard: 0,
+    deck: [{content: 'mock'},{content: 'mock'}],
+    activeCard: 1,
     isSuccessRate: false,
     successRate: 0,
   };
@@ -52,14 +54,6 @@ class HomeScreen extends Component {
     });
   };
 
-  resetActiveCard = () => {
-    this.setState(() => {
-      return {
-        activeCard: 0,
-      };
-    });
-  };
-
   writeToClipboard = async () => {
     let {activeCard, deck} = this.state;
     await Clipboard.setString(deck[activeCard]['content']);
@@ -67,7 +61,6 @@ class HomeScreen extends Component {
   };
 
   handleCategoryButtonPress = cat => {
-    this.resetActiveCard();
     let url =
       cat !== 'random' ? 'retrieve-by-cat?category=' + cat : 'retrieve-all';
     axios
@@ -76,6 +69,7 @@ class HomeScreen extends Component {
         if (response.status == 200) {
           this.setState(() => {
             return {
+              activeCard: 0,
               deck: response.data,
               category: cat,
               shufflerDisplay: true,
@@ -154,7 +148,7 @@ class HomeScreen extends Component {
           topRightButton="edit"
         />
         <View style={{display: screenDisplay}}>
-          <Text style={styles.text}>Select category:</Text>
+          <GuideTextBox/>
           <View style={styles.categoriesContainer}>
             <CategoryButton
               handleOnPress={this.handleCategoryButtonPress.bind(
@@ -190,21 +184,18 @@ class HomeScreen extends Component {
 export default HomeScreen;
 
 const styles = StyleSheet.create({
-  text: {
-    marginTop: 30,
-    fontSize: 40,
-    marginBottom: 20,
-  },
   container: {
+    height: '100%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#FFFCF9',
   },
   categoriesContainer: {
     height: 200,
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
+    marginTop: 10,
   },
 });

@@ -5,7 +5,7 @@ import {
   Image,
   StyleSheet,
   Dimensions,
-  AsyncStorage
+  AsyncStorage,
 } from 'react-native';
 
 import CustomButton from '../Components/Button/Button';
@@ -14,18 +14,15 @@ import TextButton from '../Components/TextButton/TextButton';
 const {width, height} = Dimensions.get('screen');
 
 class LogoutScreen extends Component {
-  state = {
-  };
+  state = {};
   handleLogout = () => {
-      AsyncStorage.removeItem('x-auth').then(
-          ()=>{
-            this.props.navigation.navigate('HomeScreen');
-          }
-      ).catch(
-          (err)=>{
-            alert(err)
-          }
-      )
+    AsyncStorage.removeItem('x-auth')
+      .then(() => {
+        this.props.navigation.navigate('HomeScreen');
+      })
+      .catch(err => {
+        alert(err);
+      });
   };
 
   handleLinkToLoginScreen = () => {
@@ -39,16 +36,13 @@ class LogoutScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image
-          style={styles.logo}
-          source={require('../../../assets/images/logo.png')}></Image>
-          <CustomButton text="Logout" onPress={this.handleLogout} />
-          <TextButton
-            onPress={this.handleLinkToHomeScreen}
-            text="actually... take me back home"
-          />
-
-    </View>
+        <Text style={styles.logo}>yadda yadda ...</Text>
+        <CustomButton text="Logout" onPress={this.handleLogout} />
+        <TextButton
+          onPress={this.handleLinkToHomeScreen}
+          text="actually... take me back home"
+        />
+      </View>
     );
   }
 }
@@ -59,17 +53,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: '#FFFCF9',
   },
   formContainer: {
     height: 200,
     justifyContent: 'space-around',
   },
   logo: {
-    width: 100,
-    height: 100,
+    fontSize: 40,
+    textAlign: 'center',
     marginTop: '35%',
     marginBottom: '25%',
+    fontFamily: 'Gaegu',
   },
   textInput: {
     width: 0.9 * width,

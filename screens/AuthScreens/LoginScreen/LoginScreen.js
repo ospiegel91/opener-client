@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, TextInput, StyleSheet, Image, Dimensions, AsyncStorage } from 'react-native';
+import { Text, View, TextInput, StyleSheet, Image, Dimensions, AsyncStorage } from 'react-native';
 // import AsyncStorage from '@react-native-community/async-storage';
 import CustomButton from '../Components/Button/Button';
 import TextButton from '../Components/TextButton/TextButton';
@@ -76,9 +76,7 @@ class LoginScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image
-          style={styles.logo}
-          source={require('../../../assets/images/logo.png')}></Image>
+        <Text style={styles.logo}>yadda yadda ...</Text>
         <View style={styles.formContainer}>
           <TextInput
             value={this.state.username}
@@ -117,17 +115,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: '#FFFCF9',
   },
   formContainer: {
     height: 150,
     justifyContent: 'space-around',
   },
   logo: {
-    width: 100,
-    height: 100,
+    fontSize: 40,
+    textAlign: 'center',
     marginTop: '35%',
     marginBottom: '25%',
+    fontFamily: 'Gaegu',
   },
   textInput: {
     width: 0.9 * width,
@@ -136,6 +135,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     paddingLeft: '3%',
     color: 'rgb(188,188,188)',
-    fontSize: 18,
+    fontSize: 22,
+    fontFamily: 'Gaegu',
   },
 });

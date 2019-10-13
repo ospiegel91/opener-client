@@ -1,4 +1,4 @@
-import { Text, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import React, {Component} from 'react';
 import axios from 'axios';
 
@@ -38,6 +38,7 @@ class SuccessBox extends Component {
         }
       })
       .catch(err => {
+        
       });
   };
 
@@ -45,9 +46,21 @@ class SuccessBox extends Component {
     let { successRate, isSuccessRate } = this.state;
     let successRateDisplay = isSuccessRate ? 'flex' : 'none';
     return (
-        <Text style={{fontSize: 20, display: successRateDisplay}}>{successRate}%</Text>
+        <View style={{display: successRateDisplay}}>
+            <Text style={styles.text}>Success:</Text>
+            <Text style={styles.text}>{successRate}%</Text>     
+        </View>
+        
     );
   }
 }
+
+const styles = StyleSheet.create({
+    text: {
+      fontSize: 20,
+      fontFamily: 'Gaegu',
+      textAlign: 'center'
+    }
+  });
 
 export default SuccessBox;

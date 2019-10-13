@@ -15,8 +15,9 @@ class TextButton extends Component {
 
 const styles = StyleSheet.create({
     text:{
+        color: '#235784',
         marginTop: '5%',
-        color:'#26547C',
+        color: '#26547C',
         fontSize: 22,
         textDecorationLine: 'underline',
         textDecorationStyle: 'solid',

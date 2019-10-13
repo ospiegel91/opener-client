@@ -1,14 +1,7 @@
 import React, {Component} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  ActivityIndicator,
-  AsyncStorage,
-} from 'react-native';
+import {View, StyleSheet, ActivityIndicator, AsyncStorage} from 'react-native';
 
 import axios from 'axios';
-// import AsyncStorage from '@react-native-community/async-storage';
 
 class LoadingScreen extends Component {
   componentDidMount() {
@@ -26,11 +19,11 @@ class LoadingScreen extends Component {
           if (reponse.status == 200) {
             this.props.navigation.navigate('HomeScreen');
           } else {
-            this.props.navigation.navigate('HomeScreen');
+            this.props.navigation.navigate('WelcomeScreen');
           }
         })
         .catch(() => {
-          this.props.navigation.navigate('HomeScreen');
+          this.props.navigation.navigate('WelcomeScreen');
         });
     });
   };

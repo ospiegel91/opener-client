@@ -19,15 +19,16 @@ const styles = StyleSheet.create({
     buttonContainer:{
         height: height * 0.08,
         width: width *0.9,
-        backgroundColor: 'rgb(255,82,76)',
+        backgroundColor: '#EF476F',
         borderRadius: 30,
         alignItems: 'center',
         justifyContent: 'center',
 
     },
     buttonText:{
-        fontSize: 24,
-        color: 'white'
+        fontSize: 30,
+        color: 'white',
+        fontFamily: 'Gaegu',
     }
 })
 

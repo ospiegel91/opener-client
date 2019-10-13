@@ -11,8 +11,11 @@ class CategoryButton extends Component {
     render(){
         return (
             <TouchableOpacity onPress={this.props.handleOnPress} style={styles.buttonContainer} {...this.props}>
-                <Emoji name={this.props.emojiName} style={{fontSize: 22}} />
+            <Text>
+                <Emoji name={this.props.emojiName} style={{fontSize: 25}} />
                 <Text style={styles.buttonText}>{this.props.text}</Text>
+            </Text>
+
             </TouchableOpacity>
         )
     }
@@ -29,11 +32,18 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         alignItems: 'center',
         padding: 10,
+        marginLeft: 4,
+        marginRight: 4,
+        shadowColor: '#235784',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.5,
+        shadowRadius: 6,
     },
     buttonText:{
-        fontSize: 22,
+        fontSize: 28,
         color: 'black',
         marginLeft: 4,
+        fontFamily: 'Gaegu',
     }
 })
 

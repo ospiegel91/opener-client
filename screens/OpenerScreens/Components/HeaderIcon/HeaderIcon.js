@@ -16,9 +16,9 @@ class HeaderIcon extends Component {
                 color='white'
                 reverse={true}
                 raised={true}
-                backgroundColor="#235784"
+                backgroundColor="#26547C"
                 size={22}
-                reverseColor="#235784"
+                reverseColor="#26547C"
                 disabled={this.props.disabled}
             />
         )

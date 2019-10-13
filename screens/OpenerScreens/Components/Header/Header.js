@@ -18,7 +18,7 @@ class Header extends Component {
             type='antdesign'
             disabled={false}
         />
-        <Text style={styles.text}>Opener</Text>
+        <Text style={styles.text}>yadda yadda ...</Text>
         <TopRightIcon loggedIn={this.props.loggedIn} handlePress={this.props.handleRightIcon} buttonType={this.props.topRightButton}/>
       </View>
     );
@@ -28,13 +28,14 @@ class Header extends Component {
 const styles = StyleSheet.create({
   container: {
     paddingTop: 38,
-    height: height * 0.12,
+    paddingBottom: 6,
+    height: height * 0.14,
     width: width,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#FFF6F9',
+    backgroundColor: '#26547C',
     shadowColor: '#235784',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.5,
@@ -42,11 +43,13 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   text:{
-      fontSize: 26,
+    fontFamily: 'Gaegu',
+      fontSize: 32,
       color: '#235784',
       fontWeight: "600",
       paddingLeft: 8,
       paddingRight: 8,
+      color: 'white',
   }
 });
 

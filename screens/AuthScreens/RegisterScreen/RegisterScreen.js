@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {
+  Text,
   View,
   TextInput,
   StyleSheet,
@@ -47,7 +48,6 @@ class RegisterScreen extends Component {
   };
 
   handleRegister = () => {
-    alert('pressed');
     const {email, password, username} = this.state;
     if (validator.isEmail(email) && username.trim() && password.trim()) {
       data = {
@@ -74,16 +74,13 @@ class RegisterScreen extends Component {
   };
 
   handleLinkToLoginScreen = () => {
-    alert('hello from handle link');
     this.props.navigation.navigate('LoginScreen');
   };
 
   render() {
     return (
       <View style={styles.container}>
-        <Image
-          style={styles.logo}
-          source={require('../../../assets/images/logo.png')}></Image>
+        <Text style={styles.logo}>yadda yadda ...</Text>
         <View style={styles.formContainer}>
           <TextInput
             autoCapitalize="none"
@@ -115,10 +112,13 @@ class RegisterScreen extends Component {
             justifyContent: 'space-around',
           }}>
           <CustomButton text="Register" onPress={this.handleRegister} />
-          <TextButton
-            onPress={this.handleLinkToLoginScreen}
-            text="Already have an acount? Click here to sign in!"
-          />
+          <View style={styles.loginRedirectContainer}>
+            <TextButton
+              onPress={this.handleLinkToLoginScreen}
+              text="Already have an acount? Click here to sign in!"
+            />
+          </View>
+
         </View>
       </View>
     );
@@ -131,17 +131,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: '#FFFCF9',
   },
   formContainer: {
-    height: 200,
+    height: 280,
     justifyContent: 'space-around',
   },
   logo: {
-    width: 100,
-    height: 100,
+    fontSize: 40,
+    textAlign: 'center',
     marginTop: '35%',
     marginBottom: '25%',
+    fontFamily: 'Gaegu',
   },
   textInput: {
     width: 0.9 * width,
@@ -150,6 +151,13 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     paddingLeft: '3%',
     color: 'rgb(188,188,188)',
-    fontSize: 18,
+    fontSize: 22,
+    fontFamily: 'Gaegu',
   },
+  loginRedirectContainer:{
+    marginTop: 6,
+    height: 100,
+    width: '70%',
+    textAlign: 'center',
+  }
 });

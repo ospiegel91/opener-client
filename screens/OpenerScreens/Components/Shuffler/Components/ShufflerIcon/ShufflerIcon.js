@@ -16,9 +16,9 @@ class ShufflerIcon extends Component {
                 color='white'
                 reverse={true}
                 raised={true}
-                backgroundColor="#235784"
-                size={22}
-                reverseColor="#235784"
+                backgroundColor={this.props.color}
+                size={this.props.size}
+                reverseColor={this.props.color}
                 disabled={this.props.disabled}
             />
         )

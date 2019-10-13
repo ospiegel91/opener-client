@@ -35,6 +35,12 @@
 		444BE297418B4856AA1FB3E7 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72448D827A6D44FE9AF00346 /* Octicons.ttf */; };
 		9F90A4DDEABD431BBE25EE80 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB12A867ECFE4BDA82D34A56 /* SimpleLineIcons.ttf */; };
 		D3D76B581CC94D098E567F0A /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68A25CBF60F949FF8BA575CF /* Zocial.ttf */; };
+		2E5CBB0192CC40E9AA68E531 /* Mansalva-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF1EE06FD84F6DAC15DA97 /* Mansalva-Regular.ttf */; };
+		1BFF135280DA466C83DD6459 /* Gaegu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3518B94ECD540949128CC08 /* Gaegu-Bold.ttf */; };
+		A7C52F81CE6B41789E8365D9 /* Gaegu-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 299AA1D5AE4B43E1817FFACD /* Gaegu-Light.ttf */; };
+		37FCA0DF09294ACBB4A120AA /* Gaegu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1ECECD0E44047B88D2154C9 /* Gaegu-Regular.ttf */; };
+		91E1C9A974384715AA56A757 /* GochiHand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0123C9F118284099A02221C6 /* GochiHand-Regular.ttf */; };
+		D3AD9EEEFD1443D4A0C09C1B /* NanumPenScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B07E6B8D23C4434B9C7B9F2 /* NanumPenScript-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +104,12 @@
 		72448D827A6D44FE9AF00346 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		BB12A867ECFE4BDA82D34A56 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		68A25CBF60F949FF8BA575CF /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		72EF1EE06FD84F6DAC15DA97 /* Mansalva-Regular.ttf */ = {isa = PBXFileReference; name = "Mansalva-Regular.ttf"; path = "../assets/fonts/Mansalva-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A3518B94ECD540949128CC08 /* Gaegu-Bold.ttf */ = {isa = PBXFileReference; name = "Gaegu-Bold.ttf"; path = "../assets/fonts/Gaegu-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		299AA1D5AE4B43E1817FFACD /* Gaegu-Light.ttf */ = {isa = PBXFileReference; name = "Gaegu-Light.ttf"; path = "../assets/fonts/Gaegu-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B1ECECD0E44047B88D2154C9 /* Gaegu-Regular.ttf */ = {isa = PBXFileReference; name = "Gaegu-Regular.ttf"; path = "../assets/fonts/Gaegu-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0123C9F118284099A02221C6 /* GochiHand-Regular.ttf */ = {isa = PBXFileReference; name = "GochiHand-Regular.ttf"; path = "../assets/fonts/GochiHand-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4B07E6B8D23C4434B9C7B9F2 /* NanumPenScript-Regular.ttf */ = {isa = PBXFileReference; name = "NanumPenScript-Regular.ttf"; path = "../assets/fonts/NanumPenScript-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +261,12 @@
 				72448D827A6D44FE9AF00346 /* Octicons.ttf */,
 				BB12A867ECFE4BDA82D34A56 /* SimpleLineIcons.ttf */,
 				68A25CBF60F949FF8BA575CF /* Zocial.ttf */,
+				72EF1EE06FD84F6DAC15DA97 /* Mansalva-Regular.ttf */,
+				A3518B94ECD540949128CC08 /* Gaegu-Bold.ttf */,
+				299AA1D5AE4B43E1817FFACD /* Gaegu-Light.ttf */,
+				B1ECECD0E44047B88D2154C9 /* Gaegu-Regular.ttf */,
+				0123C9F118284099A02221C6 /* GochiHand-Regular.ttf */,
+				4B07E6B8D23C4434B9C7B9F2 /* NanumPenScript-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -410,6 +428,12 @@
 				444BE297418B4856AA1FB3E7 /* Octicons.ttf in Resources */,
 				9F90A4DDEABD431BBE25EE80 /* SimpleLineIcons.ttf in Resources */,
 				D3D76B581CC94D098E567F0A /* Zocial.ttf in Resources */,
+				2E5CBB0192CC40E9AA68E531 /* Mansalva-Regular.ttf in Resources */,
+				1BFF135280DA466C83DD6459 /* Gaegu-Bold.ttf in Resources */,
+				A7C52F81CE6B41789E8365D9 /* Gaegu-Light.ttf in Resources */,
+				37FCA0DF09294ACBB4A120AA /* Gaegu-Regular.ttf in Resources */,
+				91E1C9A974384715AA56A757 /* GochiHand-Regular.ttf in Resources */,
+				D3AD9EEEFD1443D4A0C09C1B /* NanumPenScript-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
